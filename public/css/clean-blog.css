@@ -481,6 +481,14 @@ header.masthead .post-heading .meta a {
   box-shadow: 0px 0px 40px 4px rgba(0,0,0,0.75);
 }
 
+.form-item:hover{
+  background-color: #2A2A2A;
+}
+.form-item:hover input{
+  background-color: #FFE6A2;
+  color: #2A2A2A;
+}
+
 .form-item p{
   font-size: 25px;
   color: #FFE6A2;

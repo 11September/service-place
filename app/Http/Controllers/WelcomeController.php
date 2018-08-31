@@ -11,6 +11,11 @@ class WelcomeController extends Controller
         return view('index');
     }
 
+    public function register()
+    {
+        return view('register');
+    }
+
     public function login()
     {
         return view('login');

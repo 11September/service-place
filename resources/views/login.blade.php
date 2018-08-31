@@ -21,47 +21,23 @@
 
     <div class="register-content">
         <div class="container">
-            <h2 class="register-heading text-center">Registration</h2>
+            <h2 class="register-heading text-center">Login</h2>
 
             <div class="register-form-wrapper">
                 <form action="">
                     <div class="form-row">
                         <div class="form-item">
-                            <p>Profile photo</p>
-                            <input type="file" name="file" id="file" class="upload" />
-                            <label for="file">Choose a file</label>
-                        </div>
-                        <div class="form-item">
                             <p>Email</p>
                             <input type="text">
                         </div>
-                    </div>
-
-
-                    <div class="form-row">
-                        <div class="form-item">
-                            <p>First name</p>
-                            <input type="text">
-                        </div>
-                        <div class="form-item">
-                            <p>Last name</p>
-                            <input type="text">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-item">
                             <p>Password</p>
-                            <input type="text">
-                        </div>
-                        <div class="form-item">
-                            <p>Confirm password</p>
                             <input type="text">
                         </div>
                     </div>
 
                     <div class="form-button">
-                        <button class="nav-link signin" type="submit" value="Submit">Save</button>
+                        <button class="nav-link signin" type="submit" value="Submit">Sign In</button>
                     </div>
 
                 </form>
