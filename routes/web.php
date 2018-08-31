@@ -15,6 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('/login', 'WelcomeController@login');
 Route::get('/register', 'WelcomeController@register');
+Route::get('/profile', 'WelcomeController@profile');
 
 
 

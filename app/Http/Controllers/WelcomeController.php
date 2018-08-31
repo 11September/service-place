@@ -20,4 +20,9 @@ class WelcomeController extends Controller
     {
         return view('login');
     }
+
+    public function profile()
+    {
+        return view('profile');
+    }
 }

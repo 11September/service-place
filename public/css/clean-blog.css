@@ -10,6 +10,7 @@ body {
 
 p {
   line-height: 1.5;
+  margin: 0;
 }
 
 p a {
@@ -443,7 +444,11 @@ header.masthead .post-heading .meta a {
 }
 
 .wrapper-header{
+  width: 100%;
   padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .register-content{
@@ -543,3 +548,106 @@ header.masthead .post-heading .meta a {
 }
 
 /* login / register pages end */
+
+
+/* profile page */
+.profile-content{
+  margin-bottom: 30px;
+  padding: 0 10%;
+}
+
+.wrapper-profile-avatar{
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrapper-profile-avatar img{
+  width:142px;
+  height:142px;
+  border: 2px solid #FFE6A2;
+  border-radius: 70px;
+}
+
+.profile-username{
+  font-size: 30px;
+  color: #FFE6A2;
+  margin-top: 10px;
+}
+
+.social-links{
+  color: white;
+  width:100%;
+  height:100%;
+  border-radius: 20px;
+  background-color: #2A2A2A;
+  -webkit-box-shadow: 0px 0px 40px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 40px 4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 40px 4px rgba(0,0,0,0.75);
+}
+
+.social-link{
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35px;
+  width:100%;
+  height:40px;
+  background-color: #2A2A2A;
+  border-bottom: 1px solid #707070;
+}
+
+.social-link-thead{
+  border-radius: 20px 20px 0 0;
+  background-color: #FFE6A2;
+}
+
+.social-link-thead-name{
+  color: #262728;
+}
+
+.social-link-last{
+  border-radius: 0 0 20px 20px;
+  border-bottom: none;
+}
+
+.social-link-name{
+  color: #FFFFFF;
+}
+
+.social-link-src{
+  color: #FFE6A2;
+}
+
+.social-link-edit-button, .social-link-delete-button, .social-link-create-button{
+  width: 51px;
+  height: 26px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.social-link-edit-button{
+  color: #2A2A2A;
+  background-color: #FFE6A2;
+}
+
+.social-link-delete-button{
+  color: #FFE6A2;
+  background-color: #CB373F;
+}
+
+.social-link-create-button{
+  color: #FFE6A2;
+  background-color: #2A2A2A;
+}
+
+.wrapper-social-links{
+  margin-bottom: 25px;
+}
+/* profile page end */
