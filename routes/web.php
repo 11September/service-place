@@ -16,6 +16,9 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/login', 'WelcomeController@login');
 Route::get('/register', 'WelcomeController@register');
 Route::get('/profile', 'WelcomeController@profile');
+Route::get('/social', 'WelcomeController@social');
+Route::get('/new-post', 'WelcomeController@new_post');
+Route::get('/post', 'WelcomeController@post');
 
 
 

@@ -25,4 +25,19 @@ class WelcomeController extends Controller
     {
         return view('profile');
     }
+
+    public function social()
+    {
+        return view('social');
+    }
+
+    public function new_post()
+    {
+        return view('new_post');
+    }
+
+    public function post()
+    {
+        return view('post');
+    }
 }
