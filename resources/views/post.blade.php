@@ -21,8 +21,43 @@
         <a class="nav-link signin" href="contact.html">Back</a>
     </div>
 
-    <div class="wrapper-one-post">
+    <div class="container">
+        <div class="wrapper-one-post">
+            <div class="one-post">
+                <div class="one-post-heading">
+                    <p class="one-post-title">
+                        Cheat subscribers in Instagram, sad sad asd aslkpoaid opais dasi dsai udpadsu
+                        dsadsadsadsa
+                    </p>
+                </div>
+                <div class="one-post-content">
+                    <div class="one-post-description-wrapper">
+                        <p class="one-post-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="one-post-info">
+                    <div class="one-post-user-info">
+                        <p><img src="img/oleg.jpg" alt="oleg"></p>
+                        <p class="one-post-user-name">John Doe</p>
+                    </div>
+                    <div class="one-post-contact-me">
+                        <p>Contact me:</p>
+                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
+                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
+                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
+                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
+                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
