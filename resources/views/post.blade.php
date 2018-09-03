@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends('layouts.master')
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+@section('css')
 
-    <title>First Title of Page</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/clean-blog.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-</head>
-<body>
+@endsection
+
+@section('content')
 
 <div class="register-page">
 
     <div class="wrapper-header">
-        <a class="nav-link signin" href="contact.html">Back</a>
+        <a class="nav-link signin" href="{{ URL::previous() }}">Back</a>
     </div>
 
     <div class="container">
@@ -26,34 +17,46 @@
             <div class="one-post">
                 <div class="one-post-heading">
                     <p class="one-post-title">
-                        Cheat subscribers in Instagram, sad sad asd aslkpoaid opais dasi dsai udpadsu
-                        dsadsadsadsa
+                        {{ $post->title }}
                     </p>
                 </div>
                 <div class="one-post-content">
                     <div class="one-post-description-wrapper">
                         <p class="one-post-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {{ $post->description }}
                         </p>
                     </div>
                 </div>
 
                 <div class="one-post-info">
                     <div class="one-post-user-info">
-                        <p><img src="img/oleg.jpg" alt="oleg"></p>
-                        <p class="one-post-user-name">John Doe</p>
+                        <p><a href="{{ url('profile/' . $post->user->id) }}"><img src="{{ asset('img/oleg.jpg') }}" alt="oleg"></a></p>
+                        <p class="one-post-user-name"><a href="{{ url('profile/' . $post->user->id) }}">John Doe</a></p>
                     </div>
                     <div class="one-post-contact-me">
                         <p>Contact me:</p>
-                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
-                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
-                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
-                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
-                        <p class="one-post-contact-item"><a href="#">Facebook</a></p>
+                        @if($post->user->social->instagram)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->instagram }}">instagram</a></p>
+                        @endif
+                        @if($post->user->social->facebook)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->facebook }}">facebook</a></p>
+                        @endif
+                        @if($post->user->social->vk)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->vk }}">vk</a></p>
+                        @endif
+                        @if($post->user->social->linkedIn)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->linkedIn }}">linkedIn</a></p>
+                        @endif
+                        @if($post->user->social->telegram)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->telegram }}">telegram</a></p>
+                        @endif
+                        @if($post->user->social->viber)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->viber }}">viber</a></p>
+                        @endif
+                        @if($post->user->social->whatsApp)
+                            <p class="one-post-contact-item"><a href="{{ $post->user->social->whatsApp }}">whatsApp</a></p>
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -61,7 +64,9 @@
     </div>
 </div>
 
+@endsection
 
-<script src="vendor/jquery/jquery.min.js"></script>
-</body>
-</html>
+
+@section('scripts')
+
+@endsection

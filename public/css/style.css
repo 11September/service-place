@@ -340,6 +340,7 @@ img::-moz-selection {
 }
 
 header.masthead {
+    background-image: url('../img/beautiful-beauty-female-1343299.png') !important;
     background: no-repeat center center;
     background-color: #868e96;
     background-attachment: scroll;
@@ -554,6 +555,7 @@ header.masthead .post-heading .meta a {
 .service-item-title {
     font-size: 20px;
     max-height: 27px;
+    overflow: hidden;
     margin: 0 0 5px 0;
 }
 

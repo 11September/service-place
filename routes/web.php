@@ -12,16 +12,21 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/search', 'WelcomeController@search');
+
+Route::get('/post/{id}', 'WelcomeController@post');
+Route::get('/profile/1', 'WelcomeController@profile');
 
 Route::get('/login', 'WelcomeController@login');
 Route::get('/register', 'WelcomeController@register');
-Route::get('/profile', 'WelcomeController@profile');
 Route::get('/social', 'WelcomeController@social');
 Route::get('/new-post', 'WelcomeController@new_post');
-Route::get('/post', 'WelcomeController@post');
-
-
 
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

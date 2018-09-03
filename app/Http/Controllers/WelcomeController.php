@@ -2,11 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
     public function index()
+    {
+        $posts = Post::where('status', 'published')->latest()->with('user')->paginate(20);
+
+        return view('index', compact('posts'));
+    }
+
+    public function post($id = null)
+    {
+        $post = Post::with('user')->whereId($id)->first();
+
+        return view('post', compact('post'));
+    }
+
+    public function search(Request $request)
     {
         return view('index');
     }
@@ -34,10 +49,5 @@ class WelcomeController extends Controller
     public function new_post()
     {
         return view('new_post');
-    }
-
-    public function post()
-    {
-        return view('post');
     }
 }
