@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -43,13 +43,15 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string|max:255',
+            'lastName' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -58,13 +60,27 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
+        $profile_image_url= null;
+        $request = request();
+
+        if ($request->hasFile('avatar')) {
+            $profileImage = $request->file('avatar');
+            $profileImageSaveAsName = time() . "-profile." . $profileImage->getClientOriginalExtension();
+
+            $upload_path = 'storage/users/';
+            $profile_image_url = $upload_path . $profileImageSaveAsName;
+            $success = $profileImage->move($upload_path, $profileImageSaveAsName);
+        }
+
         return User::create([
+            'avatar' => $profile_image_url,
             'name' => $data['name'],
+            'lastName' => $data['lastName'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

@@ -263,6 +263,10 @@ img::-moz-selection {
     text-transform: uppercase;
 }
 
+.nav-item{
+    margin-left: 20px;
+}
+
 @media only screen and (min-width: 992px) {
     #mainNav {
         border-bottom: 1px solid transparent;
@@ -607,6 +611,7 @@ header.masthead .post-heading .meta a {
 .register-page {
     background-color: #2A2A2A;
     min-height: 100vh;
+    padding-bottom: 50px;
 }
 
 .wrapper-header {
@@ -805,8 +810,18 @@ header.masthead .post-heading .meta a {
     color: #FFFFFF;
 }
 
+.social-link-name a{
+    color: white;
+    text-decoration: none;
+}
+
 .social-link-src {
     color: #FFE6A2;
+}
+
+.social-link-src a{
+    color: #FFE6A2;
+    text-decoration: none;
 }
 
 .social-link-edit-button, .social-link-delete-button, .social-link-create-button {
@@ -835,6 +850,23 @@ header.masthead .post-heading .meta a {
 
 .wrapper-social-links {
     margin-bottom: 25px;
+}
+
+.users-posts{
+    height: 100%;
+    display: block;
+}
+
+.post-flex{
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    width: 100%;
+    height:auto;
+    background-color: #2A2A2A;
+    border-bottom: 1px solid #707070;
 }
 
 /* profile page end */

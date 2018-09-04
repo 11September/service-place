@@ -17,7 +17,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'lastName', 'avatar',
     ];
 
     /**
@@ -32,5 +32,10 @@ class User extends \TCG\Voyager\Models\User
     public function social()
     {
         return $this->hasOne(Social::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }
