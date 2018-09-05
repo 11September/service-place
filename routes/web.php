@@ -12,18 +12,24 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::get('/search', 'WelcomeController@search');
+Route::get('/search', 'PostsController@search');
 
-Route::get('/post/{id}', 'WelcomeController@post');
+Route::get('/post/{id}', 'PostsController@post');
 Route::get('/user/{id}', 'WelcomeController@user');
 Route::get('/profile', 'WelcomeController@profile')->middleware('auth');
 Route::get('/editProfile', 'WelcomeController@editProfile')->middleware('auth');
 Route::post('/updateProfile',  'WelcomeController@updateProfile')->middleware('auth');
 
-Route::get('/login', 'WelcomeController@login');
-Route::get('/register', 'WelcomeController@register');
+//Route::get('/login', 'WelcomeController@login');
+//Route::get('/register', 'WelcomeController@register');
+
 Route::get('/social', 'WelcomeController@social');
-Route::get('/new-post', 'WelcomeController@new_post');
+
+Route::get('/new-post', 'PostsController@new_post');
+Route::get('/edit-post/{post}', 'PostsController@edit_post');
+Route::get('/delete-post/{id}', 'PostsController@delete_post');
+Route::post('/storePost', 'PostsController@storePost');
+Route::post('/updatePost/{post}', 'PostsController@updatePost');
 
 Auth::routes();
 

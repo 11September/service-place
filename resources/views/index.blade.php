@@ -8,7 +8,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Logo</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Logo</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     @guest
@@ -57,8 +57,8 @@
                         of denouncing pleasure and praising pain was born
                     </span>
 
-                        <form class="search-form" action="#">
-                            <input type="text" class="form-control" placeholder="What do you want to find?">
+                        <form class="search-form" action="{{ action('PostsController@search') }}">
+                            <input name="search" type="text" class="form-control" placeholder="What do you want to find?">
                         </form>
                     </div>
                 </div>

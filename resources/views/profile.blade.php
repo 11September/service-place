@@ -104,7 +104,7 @@
             <div class="social-links">
                 <div class="social-link social-link-thead">
                     <p class="social-link-thead-name">Posts</p>
-                    <p><a class="social-link-create-button" href="#">+Add</a></p>
+                    <p><a class="social-link-create-button" href="{{ url('/new-post') }}">+Add</a></p>
                 </div>
 
                 @foreach($user->posts as $post)
@@ -117,8 +117,8 @@
 
                         <div>
                             <p>
-                                <a class="social-link-edit-button" href="#">Edit</a>
-                                <a class="social-link-delete-button" href="#">Delete</a>
+                                <a class="social-link-edit-button" href="{{ url('/edit-post/' . $post->id) }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ url('/delete-post/' . $post->id) }}">Delete</a>
                             </p>
                         </div>
                     </div>
