@@ -24,6 +24,8 @@ Route::post('/updateProfile',  'WelcomeController@updateProfile')->middleware('a
 //Route::get('/register', 'WelcomeController@register');
 
 Route::get('/social', 'WelcomeController@social');
+Route::post('/socialUpdate', 'WelcomeController@social_update');
+Route::get('/social/{name}', 'WelcomeController@social_delete');
 
 Route::get('/new-post', 'PostsController@new_post');
 Route::get('/edit-post/{post}', 'PostsController@edit_post');

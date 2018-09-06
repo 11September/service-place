@@ -34,72 +34,98 @@
                         <p><a class="social-link-create-button" href="#">+Add</a></p>
                     </div>
 
-                    @if(isset($user->social->instagram))
+                    @if(isset($user->social->instagram) && !empty($user->social->instagram))
                         <div class="social-link">
                             <p class="social-link-name">Instagram</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->instagram }}">{{ $user->social->instagram }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "instagram") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    @if(isset($user->social->facebook))
+                    @if(isset($user->social->facebook) && !empty($user->social->facebook))
                         <div class="social-link">
                             <p class="social-link-name">Facebook</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->facebook }}">{{ $user->social->facebook }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "facebook") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    @if(isset($user->social->vk))
+                    @if(isset($user->social->vk) && !empty($user->social->vk))
                         <div class="social-link">
                             <p class="social-link-name">VK</p>
                             <p class="social-link-src"><a href="{{ $user->social->vk }}">{{ $user->social->vk }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "vk") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    @if(isset($user->social->linkedIn))
+                    @if(isset($user->social->linkedIn) && !empty($user->social->linkedIn))
                         <div class="social-link">
                             <p class="social-link-name">LinkedIn</p>
                             <p class="social-link-src"><a
-                                        href="{{ $user->social->facebook }}">{{ $user->social->facebook }}</a></p>
+                                        href="{{ $user->social->linkedIn }}">{{ $user->social->linkedIn }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "linkedIn") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    @if(isset($user->social->telegram))
+                    @if(isset($user->social->telegram) && !empty($user->social->telegram))
                         <div class="social-link">
                             <p class="social-link-name">Telegram</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->telegram }}">{{ $user->social->telegram }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "telegram") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    @if(isset($user->social->viber))
+                    @if(isset($user->social->viber) && !empty($user->social->viber))
                         <div class="social-link">
                             <p class="social-link-name">Viber</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->viber }}">{{ $user->social->viber }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "viber") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    @if(isset($user->social->whatsApp))
+                    @if(isset($user->social->whatsApp) && !empty($user->social->whatsApp))
                         <div class="social-link">
                             <p class="social-link-name">WhatsApp</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->whatsApp }}">{{ $user->social->whatsApp }}</a></p>
+
+                            <p>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "whatsApp") }}">Delete</a>
+                            </p>
                         </div>
                     @endif
 
-                    <div class="social-link social-link-last">
-                        <p class="social-link-name">Facebook</p>
-                        <p class="social-link-src">facebook.com/qweqw123</p>
-                        <p>
-                            <a class="social-link-edit-button" href="#">Edit</a>
-                            <a class="social-link-delete-button" href="#">Delete</a>
-                        </p>
-                    </div>
                 </div>
             </div>
-
 
             <div class="social-links">
                 <div class="social-link social-link-thead">

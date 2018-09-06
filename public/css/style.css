@@ -808,6 +808,8 @@ header.masthead .post-heading .meta a {
 
 .social-link-name {
     color: #FFFFFF;
+    width: 110px;
+    min-width: 110px;
 }
 
 .social-link-name a{

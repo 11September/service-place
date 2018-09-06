@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Social;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -81,6 +82,46 @@ class WelcomeController extends Controller
 
     public function social()
     {
-        return view('social');
+        $socials = Social::where('user_id', Auth::id())->first();
+
+//        dd($socials);
+
+        return view('social',compact('socials'));
+    }
+
+    public function social_update(Request $request)
+    {
+        $request->validate([
+            'facebook' => 'max:255',
+            'viber' => 'max:255',
+            'telegram' => 'max:255',
+            'vk' => 'max:255',
+            'linkedIn' => 'max:255',
+            'instagram' => 'max:255',
+            'whatsApp' => 'max:255',
+        ]);
+
+        $social = Social::where('user_id', Auth::id())->first();
+        $social->facebook = $request->facebook;
+        $social->viber = $request->viber;
+        $social->telegram = $request->telegram;
+        $social->vk = $request->vk;
+        $social->linkedIn = $request->linkedIn;
+        $social->instagram = $request->instagram;
+        $social->whatsApp = $request->whatsApp;
+        $social->save();
+
+        return redirect()->to('/profile');
+    }
+
+    public function social_delete($name = null)
+    {
+        $social = Social::where('user_id', Auth::id())->first();
+        $social->fill([
+            "$name" => ""
+        ]);
+        $social->save();
+
+        return redirect()->to('/profile');
     }
 }
