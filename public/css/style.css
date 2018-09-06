@@ -73,6 +73,14 @@ button, input, optgroup, select, textarea {
     margin: 0
 }
 
+.cards{
+    display: none;
+}
+
+.cards.show-items{
+    display: block;
+}
+
 button, input {
     overflow: visible
 }
