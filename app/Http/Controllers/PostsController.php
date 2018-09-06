@@ -23,7 +23,9 @@ class PostsController extends Controller
     {
         $posts = Post::where('title', 'like', "%$request->search%")->published()->latest()->with('user')->paginate(20);
 
-        return view('index', compact('posts'));
+        $search = $request->search;
+
+        return view('index', compact('posts', 'search'));
     }
 
     public function new_post()

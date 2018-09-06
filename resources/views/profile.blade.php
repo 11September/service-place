@@ -29,9 +29,13 @@
 
             <div class="wrapper-social-links">
                 <div class="social-links">
-                    <div class="social-link social-link-thead">
+
+
+
+
+                    <div class="social-link social-link-thead @if(empty($user->social->instagram) && empty($user->social->facebook) && empty($user->social->vk) && empty($user->social->linkedIn) && empty($user->social->telegram) && empty($user->social->viber) && empty($user->social->whatsApp)) empty @endif">
                         <p class="social-link-thead-name">Social links</p>
-                        <p><a class="social-link-create-button" href="#">+Add</a></p>
+                        <p><a class="social-link-create-button" href="{{ url('/social') }}">+Add</a></p>
                     </div>
 
                     @if(isset($user->social->instagram) && !empty($user->social->instagram))
@@ -128,7 +132,7 @@
             </div>
 
             <div class="social-links">
-                <div class="social-link social-link-thead">
+                <div class="social-link social-link-thead @if(count($user->posts) < 1) empty @endif">
                     <p class="social-link-thead-name">Posts</p>
                     <p><a class="social-link-create-button" href="{{ url('/new-post') }}">+Add</a></p>
                 </div>
