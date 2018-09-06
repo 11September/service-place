@@ -9,7 +9,7 @@
 <div class="register-page">
 
     <div class="wrapper-header">
-        <a class="nav-link signin" href="{{ URL::previous() }}">Back</a>
+        <a class="nav-link signin" href="{{ url('/profile') }}">Back</a>
     </div>
 
     <div class="container">

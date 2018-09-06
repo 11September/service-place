@@ -9,22 +9,24 @@
     <div class="register-page">
 
         <div class="wrapper-header">
-            <a class="nav-link signin" href="{{ URL::previous() }}">Back</a>
+            <a class="nav-link signin" href="{{ url('/profile') }}">Back</a>
         </div>
 
         <div class="register-content">
             <div class="container">
                 <h2 class="register-heading text-center">Add New Post</h2>
 
-                <div class="register-form-wrapper new-post-wrapper">
-                    <form method="post" action="{{ action('PostsController@storePost') }}">
-                        {{ csrf_field() }}
+
+                <form method="post" action="{{ action('PostsController@storePost') }}">
+                    {{ csrf_field() }}
+                    <div class="register-form-wrapper new-post-wrapper">
+
 
                         <div class="form-row">
                             <div class="form-item">
                                 <p>Title of the post</p>
                                 <input name="title" type="text"
-                                       class="{{ $errors->has('title') ? ' is-invalid' : '' }}"/>
+                                       class="{{ $errors->has('title') ? 'is-invalid' : '' }}"/>
 
                                 @if ($errors->has('title'))
                                     <span class="invalid-feedback" role="alert">
@@ -38,7 +40,7 @@
                             <div class="form-item">
                                 <p>Description</p>
                                 <textarea name="description" type="text"
-                                          class="{{ $errors->has('description') ? ' is-invalid' : '' }}"></textarea>
+                                          class="{{ $errors->has('description') ? 'is-invalid' : '' }}"></textarea>
 
                                 @if ($errors->has('description'))
                                     <span class="invalid-feedback" role="alert">
@@ -95,11 +97,11 @@
                         <div class="form-button">
                             <button class="nav-link signin" type="submit" value="Submit">Save</button>
                         </div>
-
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
     </div>
 @endsection
