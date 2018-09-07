@@ -244,6 +244,26 @@ img::-moz-selection {
     background: transparent;
 }
 
+.wrapper-logo-user{
+    width:100%;
+    height:75px;
+    max-height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.logo a{
+    width:100%;
+    height:100%;
+}
+
+#navbarDropdown{
+    color: #FFE6A2;
+}
+
 .my-navbar{
     padding-top: 20px;
 }
@@ -367,6 +387,14 @@ header.masthead .post-heading .meta a {
     color: #FFFFFF;
 }
 
+.navbar-nav{
+    flex-direction: row;
+}
+
+.intro{
+    position: relative;
+}
+
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav .nav-link:hover {
     color: #FFE6A2;
@@ -396,7 +424,12 @@ header.masthead .post-heading .meta a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: #FFE6A2;
+}
+
+.signin:hover{
+    color: white;
+    border: 1px solid white;
 }
 
 .search-form {
@@ -679,6 +712,7 @@ header.masthead .post-heading .meta a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .wrapper-profile-avatar img {
@@ -735,9 +769,12 @@ header.masthead .post-heading .meta a {
     border-bottom: none;
 }
 
+.social-link-name.width{
+    max-width: 110px;
+}
+
 .social-link-name {
     color: #FFFFFF;
-    width: 110px;
     min-width: 110px;
 }
 
@@ -798,6 +835,12 @@ header.masthead .post-heading .meta a {
     height:auto;
     background-color: #2A2A2A;
     border-bottom: 1px solid #707070;
+}
+
+.publihed{
+    width: 26px;
+    height: 26px;
+    color: green;
 }
 
 /* profile page end */
@@ -941,6 +984,10 @@ header.masthead .post-heading .meta a {
 
 .one-post-user-name {
     margin-left: 15px;
+}
+
+.one-post-user-name a{
+    color: #FFE6A2;
 }
 
 .one-post-user-info img {

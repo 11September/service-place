@@ -45,8 +45,13 @@ class WelcomeController extends Controller
             'name' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
             'email' => 'string|email|max:255|unique:users',
-            'password' => 'string|min:6|confirmed',
         ]);
+
+        if ($request->password && !empty($request->password)){
+            $request->validate([
+                'password' => 'string|min:6|confirmed',
+            ]);
+        }
 
         $user = Auth::user();
 
@@ -84,8 +89,6 @@ class WelcomeController extends Controller
     {
         $socials = Social::where('user_id', Auth::id())->first();
 
-//        dd($socials);
-
         return view('social',compact('socials'));
     }
 
@@ -102,14 +105,28 @@ class WelcomeController extends Controller
         ]);
 
         $social = Social::where('user_id', Auth::id())->first();
-        $social->facebook = $request->facebook;
-        $social->viber = $request->viber;
-        $social->telegram = $request->telegram;
-        $social->vk = $request->vk;
-        $social->linkedIn = $request->linkedIn;
-        $social->instagram = $request->instagram;
-        $social->whatsApp = $request->whatsApp;
-        $social->save();
+
+        if ($social){
+            $social->facebook = $request->facebook;
+            $social->viber = $request->viber;
+            $social->telegram = $request->telegram;
+            $social->vk = $request->vk;
+            $social->linkedIn = $request->linkedIn;
+            $social->instagram = $request->instagram;
+            $social->whatsApp = $request->whatsApp;
+            $social->save();
+        }else{
+            $social = new Social();
+            $social->user_id = Auth::id();
+            $social->facebook = $request->facebook;
+            $social->viber = $request->viber;
+            $social->telegram = $request->telegram;
+            $social->vk = $request->vk;
+            $social->linkedIn = $request->linkedIn;
+            $social->instagram = $request->instagram;
+            $social->whatsApp = $request->whatsApp;
+            $social->save();
+        }
 
         return redirect()->to('/profile');
     }

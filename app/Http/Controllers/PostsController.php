@@ -13,7 +13,11 @@ class PostsController extends Controller
 {
     public function post($id = null)
     {
-        $post = Post::with('user')->whereId($id)->first();
+        $post = Post::with('user')->whereId($id)->published()->first();
+
+        if (!$post){
+            abort(404);
+        }
 
         return view('post', compact('post'));
     }

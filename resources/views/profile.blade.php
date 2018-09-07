@@ -16,12 +16,9 @@
         <div class="profile-content">
             <div class="wrapper-profile-avatar">
                 <p>
-                    @if($user->avatar)
+                    @if($user->avatar && $user->avatar != "users/default.png")
                         <img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}">
-                    @else
-                        <img src="img/oleg.jpg" alt="oleg">
                     @endif
-
                 </p>
 
                 <p class="profile-username">{{ $user->name }}</p>
@@ -31,8 +28,6 @@
                 <div class="social-links">
 
 
-
-
                     <div class="social-link social-link-thead @if(empty($user->social->instagram) && empty($user->social->facebook) && empty($user->social->vk) && empty($user->social->linkedIn) && empty($user->social->telegram) && empty($user->social->viber) && empty($user->social->whatsApp)) empty @endif">
                         <p class="social-link-thead-name">Social links</p>
                         <p><a class="social-link-create-button" href="{{ url('/social') }}">+Add</a></p>
@@ -40,7 +35,7 @@
 
                     @if(isset($user->social->instagram) && !empty($user->social->instagram))
                         <div class="social-link">
-                            <p class="social-link-name">Instagram</p>
+                            <p class="social-link-name width">Instagram</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->instagram }}">{{ $user->social->instagram }}</a></p>
 
@@ -53,7 +48,7 @@
 
                     @if(isset($user->social->facebook) && !empty($user->social->facebook))
                         <div class="social-link">
-                            <p class="social-link-name">Facebook</p>
+                            <p class="social-link-name width">Facebook</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->facebook }}">{{ $user->social->facebook }}</a></p>
 
@@ -66,7 +61,7 @@
 
                     @if(isset($user->social->vk) && !empty($user->social->vk))
                         <div class="social-link">
-                            <p class="social-link-name">VK</p>
+                            <p class="social-link-name width">VK</p>
                             <p class="social-link-src"><a href="{{ $user->social->vk }}">{{ $user->social->vk }}</a></p>
 
                             <p>
@@ -78,7 +73,7 @@
 
                     @if(isset($user->social->linkedIn) && !empty($user->social->linkedIn))
                         <div class="social-link">
-                            <p class="social-link-name">LinkedIn</p>
+                            <p class="social-link-name width">LinkedIn</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->linkedIn }}">{{ $user->social->linkedIn }}</a></p>
 
@@ -91,7 +86,7 @@
 
                     @if(isset($user->social->telegram) && !empty($user->social->telegram))
                         <div class="social-link">
-                            <p class="social-link-name">Telegram</p>
+                            <p class="social-link-name width">Telegram</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->telegram }}">{{ $user->social->telegram }}</a></p>
 
@@ -104,7 +99,7 @@
 
                     @if(isset($user->social->viber) && !empty($user->social->viber))
                         <div class="social-link">
-                            <p class="social-link-name">Viber</p>
+                            <p class="social-link-name width">Viber</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->viber }}">{{ $user->social->viber }}</a></p>
 
@@ -117,7 +112,7 @@
 
                     @if(isset($user->social->whatsApp) && !empty($user->social->whatsApp))
                         <div class="social-link">
-                            <p class="social-link-name">WhatsApp</p>
+                            <p class="social-link-name width">WhatsApp</p>
                             <p class="social-link-src"><a
                                         href="{{ $user->social->whatsApp }}">{{ $user->social->whatsApp }}</a></p>
 
@@ -140,13 +135,19 @@
                 @foreach($user->posts as $post)
                     <div class="post-flex @if($loop->last) social-link-last @endif">
                         <div>
-                            <p class="social-link-name"><a href="{{ url('/post/' . $post->id) }}">{{ $post->title }}</a>
+                            <p class="social-link-name">
+                                <a href="{{ url('/post/' . $post->id) }}">
+                                    {{ $post->title }}
+                                </a>
                             </p>
                             <p class="social-link-src">{{ $post->description }}</p>
                         </div>
 
                         <div>
                             <p>
+                                @if($post->status == "Published")
+                                    <a href="#"><i class="fas fa-check-circle publihed"></i></a>
+                                @endif
                                 <a class="social-link-edit-button" href="{{ url('/edit-post/' . $post->id) }}">Edit</a>
                                 <a class="social-link-delete-button" href="{{ url('/delete-post/' . $post->id) }}">Delete</a>
                             </p>

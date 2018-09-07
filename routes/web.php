@@ -20,9 +20,6 @@ Route::get('/profile', 'WelcomeController@profile')->middleware('auth');
 Route::get('/editProfile', 'WelcomeController@editProfile')->middleware('auth');
 Route::post('/updateProfile',  'WelcomeController@updateProfile')->middleware('auth');
 
-//Route::get('/login', 'WelcomeController@login');
-//Route::get('/register', 'WelcomeController@register');
-
 Route::get('/social', 'WelcomeController@social');
 Route::post('/socialUpdate', 'WelcomeController@social_update');
 Route::get('/social/{name}', 'WelcomeController@social_delete');
@@ -36,7 +33,6 @@ Route::post('/updatePost/{post}', 'PostsController@updatePost');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

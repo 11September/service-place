@@ -63,7 +63,7 @@
                             <div class="form-item">
                                 <p>Password</p>
 
-                                <input value="{{ $user->password }}" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
                             <div class="form-item">
                                 <p>Confirm password</p>
 
-                                <input value="{{ $user->password }}" id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                             </div>
                         </div>
 

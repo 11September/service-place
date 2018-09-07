@@ -23,7 +23,7 @@
                     <div class="form-row">
                         <div class="form-item">
                             <p><i class="fab fa-facebook-f"></i> Facebook</p>
-                            <input name="facebook" value="{{ $socials->facebook }}" type="text"/>
+                            <input name="facebook" value="@if(isset($socials->facebook)) {{ $socials->facebook }} @endif" type="text"/>
 
                             @if ($errors->has('facebook'))
                                 <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
 
                         <div class="form-item">
                             <p><i class="fab fa-viber"></i> Viber</p>
-                            <input name="viber" value="{{ $socials->viber }}" type="text">
+                            <input name="viber" value="@if(isset($socials->viber)) {{ $socials->viber }} @endif" type="text">
 
                             @if ($errors->has('viber'))
                                 <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                     <div class="form-row">
                         <div class="form-item">
                             <p><i class="fab fa-telegram-plane"></i> Telegram</p>
-                            <input name="telegram" value="{{ $socials->telegram }}" type="text">
+                            <input name="telegram" value="@if(isset($socials->telegram)) {{ $socials->telegram }} @endif" type="text">
 
                             @if ($errors->has('telegram'))
                                 <span class="invalid-feedback" role="alert">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-item">
                             <p><i class="fab fa-vk"></i> VK</p>
-                            <input name="vk" value="{{ $socials->vk }}" type="text">
+                            <input name="vk" value="@if(isset($socials->vk)) {{ $socials->vk }} @endif" type="text">
 
                             @if ($errors->has('vk'))
                                 <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
                     <div class="form-row">
                         <div class="form-item">
                             <p><i class="fab fa-linkedin-in"></i> LinkedIn</p>
-                            <input name="linkedIn" value="{{ $socials->linkedIn }}" type="text">
+                            <input name="linkedIn" value="@if(isset($socials->linkedIn)) {{ $socials->linkedIn }} @endif" type="text">
 
                             @if ($errors->has('linkedIn'))
                                 <span class="invalid-feedback" role="alert">
@@ -82,7 +82,7 @@
 
                         <div class="form-item">
                             <p><i class="fab fa-instagram"></i> Instagram</p>
-                            <input name="instagram" value="{{ $socials->instagram }}" type="text">
+                            <input name="instagram" value="@if(isset($socials->instagram)) {{ $socials->instagram }} @endif" type="text">
 
                             @if ($errors->has('instagram'))
                                 <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
                     <div class="form-row">
                         <div class="form-item">
                             <p><i class="fab fa-whatsapp"></i> WhatsApp</p>
-                            <input name="whatsApp" value="{{ $socials->whatsApp }}" type="text">
+                            <input name="whatsApp" value="@if(isset($socials->whatsApp)) {{ $socials->whatsApp }} @endif" type="text">
 
                             @if ($errors->has('whatsApp'))
                                 <span class="invalid-feedback" role="alert">

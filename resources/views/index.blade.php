@@ -8,59 +8,67 @@
 
     <header class="masthead">
         <div class="overlay"></div>
-        <div class="container">
 
-            <nav class="navbar navbar-expand-lg navbar-light my-navbar">
-                <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">Logo</a>
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav ml-auto">
-                            @guest
-                                <li class="nav-item">
-                                    <a class="nav-link signin" href="{{ route('login') }}">Sign In</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link signin" href="{{ route('register') }}">Sign Up</a>
-                                </li>
-                                @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
+        <div class="intro">
+            <div class="container">
+
+                <div class="wrapper-logo-user">
+                    <p>
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            @if(setting('site.logo'))
+                                <img src="{{ asset('storage/' . setting('site.logo')) }}" alt="">
+                            @else
+                                LOGO
+                            @endif
+                        </a>
+                    </p>
+                    <p>
+                    <ul class="navbar-nav ml-auto">
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link signin" href="{{ route('login') }}">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link signin" href="{{ route('register') }}">Sign Up</a>
+                            </li>
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
+
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
-
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                  style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                    @endguest
-                        </ul>
-                    </div>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                                @endguest
+                    </ul>
+                    </p>
                 </div>
-            </nav>
 
-            <div class="row">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <div class="site-heading">
-                        <h1>First Title of Page</h1>
-                        <span class="subheading">But I must explain to you how all this mistaken idea
-                        of denouncing pleasure and praising pain was born
-                    </span>
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <div class="site-heading">
+                            <h1>{{ setting('site.title') }}</h1>
+                            <span class="subheading">{{ setting('site.description') }}</span>
 
-                    <form class="search-form" action="{{ action('PostsController@search') }}">
-                        <input name="search" type="text" class="form-control" placeholder="What do you want to find?">
-                    </form>
+                            <form class="search-form" action="{{ action('PostsController@search') }}">
+                                <input name="search" type="text" class="form-control"
+                                       placeholder="What do you want to find?">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,7 +79,8 @@
         <div class="container">
             <div class="row">
                 @if(Request::is('search'))
-                    <p class="search-helper">We found {{ $posts->total() }} posts<span class="search-helper-keyword"> "{{ $search }}" </span>
+                    <p class="search-helper">We found {{ $posts->total() }} posts<span
+                                class="search-helper-keyword"> "{{ $search }}" </span>
                     </p>
                 @else
                     <p class="search-helper">We found {{ $posts->total() }} latests posts</p>
