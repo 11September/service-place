@@ -163,19 +163,25 @@ template {
 }
 
 /*# sourceMappingURL=normalize.min.css.map */
+@font-face {
+    font-family: Segoe;
+    src: url('../fonts/Segoe UI.ttf');
+}
 
 body {
     font-size: 20px;
     color: #212529;
-    font-family: 'Lora', 'Times New Roman', serif;
+    font-family: 'Segoe', 'Lora', 'Times New Roman', serif;
 }
 
 p {
+    font-family: "Segoe", 'Lora', 'Times New Roman', serif;
     line-height: 1.5;
     margin: 0;
 }
 
 p a {
+    font-family: "Segoe", 'Lora', 'Times New Roman', serif;
     text-decoration: underline;
 }
 
@@ -186,7 +192,7 @@ h4,
 h5,
 h6 {
     font-weight: 800;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Segoe", 'Lora', 'Times New Roman', serif;
 }
 
 a {
@@ -297,8 +303,8 @@ header.masthead .overlay {
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
+    color: #FFE6A2;
     padding: 200px 0 150px;
-    color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1018,3 +1024,16 @@ header.masthead .post-heading .meta a {
 }
 
 /* one post end */
+
+
+/* media */
+@media (max-width: 768px) {
+    .wrapper-one-post{
+        padding: 0;
+    }
+
+    .one-post-info{
+        padding: 0 0 40px 10%;
+    }
+}
+/* media end */
