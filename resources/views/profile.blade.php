@@ -25,7 +25,7 @@
             </div>
 
             <div class="wrapper-social-links">
-                <div class="social-links">
+                <div class="social-links social-links-padding">
 
 
                     <div class="social-link social-link-thead @if(empty($user->social->instagram) && empty($user->social->facebook) && empty($user->social->vk) && empty($user->social->linkedIn) && empty($user->social->telegram) && empty($user->social->viber) && empty($user->social->whatsApp)) empty @endif">
@@ -41,7 +41,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "instagram") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "instagram") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -54,7 +55,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "facebook") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "facebook") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -66,7 +68,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "vk") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "vk") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -79,7 +82,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "linkedIn") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "linkedIn") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -92,7 +96,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "telegram") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "telegram") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -105,7 +110,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "viber") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "viber") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -118,7 +124,8 @@
 
                             <p>
                                 <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ action('WelcomeController@social_delete', "whatsApp") }}">Delete</a>
+                                <a class="social-link-delete-button"
+                                   href="{{ action('WelcomeController@social_delete', "whatsApp") }}">Delete</a>
                             </p>
                         </div>
                     @endif
@@ -127,7 +134,7 @@
             </div>
 
             <div class="social-links">
-                <div class="social-link social-link-thead @if(count($user->posts) < 1) empty @endif">
+                <div class="social-link social-link-thead @if(count($user->posts) <= 1) empty @endif">
                     <p class="social-link-thead-name">Posts</p>
                     <p><a class="social-link-create-button" href="{{ url('/new-post') }}">+Add</a></p>
                 </div>
@@ -143,14 +150,17 @@
                             <p class="social-link-src">{{ $post->description }}</p>
                         </div>
 
-                        <div>
+                        <div class="wrapper-profile-control-posts-buttons">
                             <p>
-                                @if($post->status == "Published")
-                                    <a href="#"><i class="fas fa-check-circle publihed"></i></a>
-                                @endif
                                 <a class="social-link-edit-button" href="{{ url('/edit-post/' . $post->id) }}">Edit</a>
                                 <a class="social-link-delete-button" href="{{ url('/delete-post/' . $post->id) }}">Delete</a>
                             </p>
+
+                            @if($post->status == "Published")
+                                <p class="profile-control-post-status">
+                                    <a href="#"><i class="fas fa-check-circle publihed"></i></a>
+                                </p>
+                            @endif
                         </div>
                     </div>
                 @endforeach

@@ -772,7 +772,7 @@ header.masthead .post-heading .meta a {
 
 .social-link-last {
     border-radius: 0 0 20px 20px;
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 .social-link-name.width{
@@ -781,7 +781,7 @@ header.masthead .post-heading .meta a {
 
 .social-link-name {
     color: #FFFFFF;
-    min-width: 110px;
+    min-width: 95px;
 }
 
 .social-link-name a{
@@ -836,7 +836,7 @@ header.masthead .post-heading .meta a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 35px;
+    padding: 5px 35px;
     width: 100%;
     height:auto;
     background-color: #2A2A2A;
@@ -1023,6 +1023,20 @@ header.masthead .post-heading .meta a {
     text-decoration: none;
 }
 
+.wrapper-profile-control-posts-buttons{
+    min-width: 95px;
+}
+
+.profile-control-post-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.social-links-padding{
+    padding-bottom: 20px;
+}
 /* one post end */
 
 
@@ -1034,6 +1048,30 @@ header.masthead .post-heading .meta a {
 
     .one-post-info{
         padding: 0 0 40px 10%;
+    }
+
+    .form-button{
+        margin-top: 30px;
+    }
+
+    .form-row{
+        margin-bottom: 0;
+    }
+
+    .post-flex, .social-link{
+        padding: 0 15px;
+    }
+
+    .profile-content{
+        padding: 0 5%;
+    }
+
+    .wrapper-profile-control-posts-buttons{
+        margin: 0 5px;
+    }
+
+    .social-link-src{
+        display: none;
     }
 }
 /* media end */

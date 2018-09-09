@@ -19,7 +19,7 @@ class WelcomeController extends Controller
 
     public function user($id = null)
     {
-        $user = User::findOrFail($id)->with('social', 'posts')->first();
+        $user = User::whereId($id)->with('social', 'posts')->first();
 
         return view('user', compact('user'));
     }

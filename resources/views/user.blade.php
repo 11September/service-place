@@ -16,7 +16,7 @@
             <div class="wrapper-profile-avatar">
                 <p>
                     @if($user->avatar && $user->avatar != "users/default.png")
-                        <img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}">
+                        <img class="img-fluid" src="{{ asset($user->avatar) }}" alt="{{ $user->name }}">
                     @endif
                 </p>
 
@@ -83,12 +83,12 @@
 
 
             <div class="social-links">
-                <div class="social-link social-link-thead @if(count($user->posts) < 1) empty @endif">
+                <div class="social-link social-link-thead">
                     <p class="social-link-thead-name">Posts</p>
                 </div>
 
                 @foreach($user->posts as $post)
-                    <div class="social-link users-posts">
+                    <div class="social-link users-posts @if($loop->last) social-link-last @endif">
                         <p class="social-link-name"><a href="{{ url('/post/' . $post->id) }}">{{ $post->title }}</a></p>
                         <p class="social-link-src">{{ $post->description }}</p>
                     </div>
