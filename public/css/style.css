@@ -1029,6 +1029,7 @@ header.masthead .post-heading .meta a {
 
 .one-post-contact-item {
     margin-left: 20px;
+    text-decoration: underline;
 }
 
 .one-post-contact-item a {
@@ -1048,7 +1049,7 @@ header.masthead .post-heading .meta a {
 }
 
 .social-links-padding{
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
 }
 
 .newpostform .form-row{
