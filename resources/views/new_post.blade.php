@@ -17,7 +17,7 @@
                 <h2 class="register-heading text-center">Add New Post</h2>
 
 
-                <form method="post" action="{{ action('PostsController@storePost') }}">
+                <form class="newpostform" method="post" action="{{ action('PostsController@storePost') }}">
                     {{ csrf_field() }}
                     <div class="register-form-wrapper new-post-wrapper">
 

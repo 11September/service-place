@@ -994,6 +994,7 @@ header.masthead .post-heading .meta a {
 
 .one-post-user-name a{
     color: #FFE6A2;
+    text-decoration: none;
 }
 
 .one-post-user-info img {
@@ -1036,6 +1037,10 @@ header.masthead .post-heading .meta a {
 
 .social-links-padding{
     padding-bottom: 20px;
+}
+
+.newpostform .form-row{
+    margin-bottom: 30px;
 }
 /* one post end */
 
