@@ -33,7 +33,7 @@
 
                             @if($post->user->avatar && $post->user->avatar != "users/default.png")
                                 <p>
-                                    <a href="{{ url('profile/' . $post->user->id) }}">
+                                    <a href="{{ url('user/' . $post->user->id) }}">
                                         <img src="{{ asset($post->user->avatar) }}" alt="{{ $post->user->name }}">
                                     </a>
                                 </p>
