@@ -62,29 +62,21 @@
                                 </div>
 
                                 <div class="wrapper-blocks-payment">
-                                    <p class="prices-description-text">Choose your payment system:</p>
+                                    <p class="prices-description-text">Payment system:</p>
                                     <div class="blocks-payment">
-
-                                        <p class="payment-item choose-card">P</p>
-
-                                        <p class="payment-item"><a class="privat" href="#">P</a></p>
-                                        <p class="payment-item"><a class="monobank" href="#">V</a></p>
-                                        <p class="payment-item"><a class="oszhad" href="#">PP</a></p>
-                                        <p class="payment-item"><a class="alpa" href="#">V</a></p>
+                                        <p class="payment-item choose-card"><i class="fab fa-cc-mastercard"></i></p>
                                     </div>
 
 
                                     <div class="cards">
                                         <div class="wrapper-code">
-                                            <p class="code-number">{{ \Illuminate\Support\Facades\Auth::user()->code }}</p>
+                                            <p class="code-number">{{ setting('site.card') }}</p>
                                         </div>
                                     </div>
 
                                     <div class="wrapper-code">
                                         <p class="code-number">{{ \Illuminate\Support\Facades\Auth::user()->code }}</p>
                                     </div>
-
-                                    <p class="card"></p>
                                 </div>
 
                                 <p class="prices-description-text">In the comments to the translation, please indicate
@@ -108,9 +100,9 @@
 
 
 @section('scripts')
-    <script>
-        $('.choose-card').on('click', function () {
-            $('.cards').toggleClass('show-items');
-        });
-    </script>
+    {{--<script>--}}
+        {{--$('.choose-card').on('click', function () {--}}
+            {{--$('.cards').toggleClass('show-items');--}}
+        {{--});--}}
+    {{--</script>--}}
 @endsection

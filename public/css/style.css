@@ -73,9 +73,9 @@ button, input, optgroup, select, textarea {
     margin: 0
 }
 
-.cards{
-    display: none;
-}
+/*.cards{*/
+    /*display: none;*/
+/*}*/
 
 .cards.show-items{
     display: block;
@@ -202,9 +202,9 @@ a {
     transition: all 0.2s;
 }
 
-a:focus, a:hover {
-    color: #0085A1;
-}
+/*a:focus, a:hover {*/
+    /*color: #0085A1;*/
+/*}*/
 
 blockquote {
     font-style: italic;
@@ -516,7 +516,7 @@ header.masthead .post-heading .meta a {
 
 .service-item-title-link {
     color: #FFE6A2;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .service-item-title {
@@ -524,6 +524,11 @@ header.masthead .post-heading .meta a {
     max-height: 27px;
     overflow: hidden;
     margin: 0 0 5px 0;
+}
+
+.service-item-title:hover, .service-item-title-link{
+    text-decoration-color: white;
+    color: white;
 }
 
 .service-item-descr {
@@ -628,10 +633,6 @@ header.masthead .post-heading .meta a {
 .form-item:hover input, .form-item:hover textarea {
     background-color: #FFE6A2;
     color: #2A2A2A;
-}
-
-.form-item:hover i {
-    color: #FFE6A2;
 }
 
 .form-item i {
@@ -786,7 +787,8 @@ header.masthead .post-heading .meta a {
 
 .social-link-name a{
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: white;
 }
 
 .social-link-src {
@@ -820,6 +822,11 @@ header.masthead .post-heading .meta a {
 .social-link-create-button {
     color: #FFE6A2;
     background-color: #2A2A2A;
+}
+
+.social-link-create-button:hover{
+    color: white;
+    text-decoration: none;
 }
 
 .wrapper-social-links {
@@ -903,6 +910,10 @@ header.masthead .post-heading .meta a {
     text-decoration: none;
 }
 
+.payment-item i{
+    color: #2A2A2A;
+}
+
 .wrapper-code {
     margin-top: 30px;
     display: flex;
@@ -915,7 +926,8 @@ header.masthead .post-heading .meta a {
 }
 
 .code-number {
-    width: 200px;
+    min-width: 180px;
+    padding: 0 10px;
     height: 35px;
     font-size: 25px;
     background-color: #FFE6A2;

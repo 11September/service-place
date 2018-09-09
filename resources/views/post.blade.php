@@ -9,7 +9,7 @@
     <div class="register-page">
 
         <div class="wrapper-header">
-            <a class="nav-link signin" href="{{ url('/profile') }}">Back</a>
+            <a class="nav-link signin" href="{{ URL::previous() }}">Back</a>
         </div>
 
         <div class="container">
@@ -40,7 +40,7 @@
                             @endif
 
                             <p class="one-post-user-name">
-                                <a href="{{ url('profile/' . $post->user->id) }}">{{ $post->user->name }}</a>
+                                <a href="{{ url('user/' . $post->user->id) }}">{{ $post->user->name }}</a>
                             </p>
                         </div>
                         <div class="one-post-contact-me">
