@@ -99,10 +99,11 @@
                             </a>
                             <p class="service-item-descr">{{ mb_strimwidth($post->description, 0, 100, " ...") }}</p>
                             <div class="service-wrapper-user">
-                                <a href="{{ url('user/' . $post->user->id) }}">
-                                    <img class="service-logo"
-                                         src="@if($post->user->avatar) {{$post->user->avatar}} @else img/oleg.jpg @endif"
-                                         alt="">
+                                <a href="{{ url( '/user/' . $post->user->id) }}">
+
+                                    @if($post->user->avatar)
+                                    <img class="service-logo" src="{{ asset($post->user->avatar) }}" alt="">
+                                    @endif
                                 </a>
                                 <a class="service-username" href="{{ url('user/' . $post->user->id) }}">
                                     <p>{{ $post->user->name }}</p>

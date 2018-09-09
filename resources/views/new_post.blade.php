@@ -62,11 +62,7 @@
                                 </div>
 
                                 <div class="wrapper-blocks-payment">
-                                    <p class="prices-description-text">Payment system:</p>
-                                    <div class="blocks-payment">
-                                        <p class="payment-item choose-card"><i class="fab fa-cc-mastercard"></i></p>
-                                    </div>
-
+                                    <p class="prices-description-text">Payment card number:</p>
 
                                     <div class="cards">
                                         <div class="wrapper-code">

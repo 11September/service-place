@@ -28,9 +28,7 @@ class WelcomeController extends Controller
 
     public function profile()
     {
-        $user = User::where('id', Auth::id())->with(['posts' => function ($query) {
-            $query->where('status', '=', 'Published');
-        }], 'social')->first();
+        $user = User::where('id', Auth::id())->with('posts', 'social')->first();
 
         return view('profile', compact('user'));
     }
@@ -61,7 +59,7 @@ class WelcomeController extends Controller
 
         if ($request->hasFile('avatar')){
             $profileImage = $request->file('avatar');
-            $profileImageSaveAsName = time() . "-profile." . $request->file('avatar')->getClientOriginalExtension();
+            $profileImageSaveAsName = time() . $request->file('avatar')->getClientOriginalExtension();
 
             $upload_path = 'storage/users/';
             $profile_image_url = $upload_path . $profileImageSaveAsName;
