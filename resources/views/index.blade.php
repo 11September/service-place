@@ -102,7 +102,7 @@
                                 <a href="{{ url( '/user/' . $post->user->id) }}">
 
                                     @if($post->user->avatar)
-                                    <img class="service-logo" src="{{ asset($post->user->avatar) }}" alt="">
+                                        <img class="service-logo" src="{{ asset($post->user->avatar) }}" alt="">
                                     @endif
                                 </a>
                                 <a class="service-username" href="{{ url('user/' . $post->user->id) }}">
@@ -116,7 +116,9 @@
                     </div>
                 @endforeach
 
-                {{ $posts->links() }}
+                <div class="wrapper-pagination">
+                    {{ $posts->links() }}
+                </div>
 
 
             </div>

@@ -143,7 +143,9 @@
                     <div class="post-flex @if($loop->last) social-link-last @endif">
                         <div>
                             <p class="social-link-name">
-                                <a href="{{ url('/post/' . $post->id) }}">
+                                <a class="@if($post->status == "Pending") disabled disabled-link @endif"
+                                   @if($post->status == "Pending") tabindex="-1" @endif
+                                   href="{{ url('/post/' . $post->id) }}">
                                     {{ $post->title }}
                                 </a>
                             </p>
