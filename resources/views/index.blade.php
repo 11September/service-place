@@ -23,13 +23,36 @@
                         </a>
                     </p>
                     <p>
+
+                    <p>
+                        <a href="{{ url('/language/en') }}"
+                          class="nav-item-child nav-item-hover language  @if ( Config::get('app.locale') == 'en') active-language @endif">
+                            @lang('messages.menu.language.en')
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="{{ url('/language/ru') }}"
+                           class="nav-item-child nav-item-hover language @if ( Config::get('app.locale') == 'ru') active-language @endif">
+                            @lang('messages.menu.language.ru')
+                        </a>
+                    </p>
+
                     <ul class="navbar-nav ml-auto">
+
+                        <a href="{{ url('/language/ru') }}"
+                           class="nav-item-child nav-item-hover language @if ( Config::get('app.locale') == 'ru') active-language @endif">
+                            @lang('messages.menu.language.ru')
+                        </a>
+
+
+
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link signin" href="{{ route('login') }}">Sign In</a>
+                                <a class="nav-link signin" href="{{ route('login') }}">@lang('messages.menu.signIN')</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link signin" href="{{ route('register') }}">Sign Up</a>
+                                <a class="nav-link signin" href="{{ route('register') }}">@lang('messages.menu.signUp')</a>
                             </li>
                             @else
                                 <li class="nav-item dropdown">

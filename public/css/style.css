@@ -432,8 +432,12 @@ header.masthead .post-heading .meta a {
 }
 
 .navbar-nav{
-    /*flex-direction: column;*/
-    flex-direction: row;
+    flex-direction: column;
+    /*flex-direction: row; */
+}
+
+.navbar-nav .nav-item:first-child{
+	    margin-bottom: 5px;
 }
 
 .intro{
@@ -499,7 +503,7 @@ a.disabled {
 }
 
 .signin {
-    width: 100px;
+    min-width: 100px;
     height: 50px;
     background-color: transparent;
     border: 1px solid #FFE6A2;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 07 2018 г., 18:31
+-- Время создания: Сен 17 2018 г., 18:44
 -- Версия сервера: 5.7.19
 -- Версия PHP: 7.1.7
 
@@ -377,8 +377,10 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `description`, `user_id`, `code`, `status`, `date_start`, `date_from`, `created_at`, `updated_at`) VALUES
-(2, 'Вибудуємо маркетинг у вашій компанії', 'BTL-Послуги\r\n\r\nBTL маркетинг діє комплексно, закріплює інформацію про товар у свідомості потенційних споживачів і таким чином здатен збільшити кількість потенційних клієнтів вдвічі', 12, 'OZlmQWTBxS', 'Published', '2018-09-07 16:42:26', '2018-09-07 16:42:26', '2018-09-07 10:42:26', '2018-09-07 10:42:26'),
-(3, 'Вибудуємо маркетинг у вашій компанії', 'BTL-Послуги\r\n\r\nBTL маркетинг діє комплексно, закріплює інформацію про товар у свідомості потенційних споживачів і таким чином здатен збільшити кількість потенційних клієнтів вдвічі', 12, 'OZlmQWTBxS', 'Published', '2018-09-07 16:42:26', '2018-09-07 16:42:26', '2018-09-07 10:42:26', '2018-09-07 10:42:26');
+(2, 'Вибудуємо маркетинг у вашій компанії', 'BTL-Послуги\r\n\r\nBTL маркетинг діє комплексно, закріплює інформацію про товар у свідомості потенційних споживачів і таким чином здатен збільшити кількість потенційних клієнтів вдвічі', 12, 'OZlmQWTBxS', 'Published', '2018-09-07 16:42:26', '2018-09-20 16:42:26', '2018-09-07 10:42:26', '2018-09-07 10:42:26'),
+(3, 'Вибудуємо маркетинг у вашій компанії', 'BTL-Послуги\r\n\r\nBTL маркетинг діє комплексно, закріплює інформацію про товар у свідомості потенційних споживачів і таким чином здатен збільшити кількість потенційних клієнтів вдвічі', 12, 'OZlmQWTBxS', 'Published', '2018-09-07 16:42:26', '2018-09-18 16:42:26', '2018-09-07 10:42:26', '2018-09-07 10:42:26'),
+(4, 'dasd', 'dasda', 12, 'MzxM2cfPBf', 'Pending', '2018-09-09 13:49:10', '2018-09-09 13:49:10', '2018-09-09 07:49:10', '2018-09-09 07:49:10'),
+(5, 'Repka', 'RepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepkaRepka', 13, '4PNUE59U', 'Pending', '2018-09-09 15:29:35', '2018-09-09 15:29:35', '2018-09-09 09:29:35', '2018-09-09 09:29:35');
 
 -- --------------------------------------------------------
 
@@ -427,13 +429,12 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site'),
 (2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site'),
 (3, 'site.logo', 'Site Logo', 'settings\\September2018\\Yia9iWJ9FYKp0MlwdJ02.png', '', 'image', 3, 'Site'),
-(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
 (5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin'),
 (6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin'),
 (7, 'admin.description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 2, 'Admin'),
 (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
+(11, 'site.card', 'Card', '5169360003079849', NULL, 'text', 6, 'Site');
 
 -- --------------------------------------------------------
 
@@ -460,7 +461,8 @@ CREATE TABLE `socials` (
 --
 
 INSERT INTO `socials` (`id`, `user_id`, `instagram`, `facebook`, `vk`, `linkedIn`, `telegram`, `viber`, `whatsApp`, `created_at`, `updated_at`) VALUES
-(3, 12, NULL, NULL, 'VK', 'IN', NULL, 'fsada', NULL, '2018-09-07 10:07:11', '2018-09-07 10:07:29');
+(3, 12, NULL, 'https://www.facebook.com/profile.php?id=100004911010171', 'VK', 'IN', NULL, 'fsada', NULL, '2018-09-07 10:07:11', '2018-09-07 10:07:29'),
+(4, 1, NULL, NULL, NULL, 'dsadasda', NULL, NULL, NULL, '2018-09-17 12:30:05', '2018-09-17 12:30:05');
 
 -- --------------------------------------------------------
 
@@ -505,9 +507,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `lastName`, `email`, `avatar`, `password`, `remember_token`, `settings`, `code`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'Admin', 'admin@admin.com', 'storage/users/1536071526-profile.jpg', '$2y$10$cVizW9apioAB7OeKb0OSF.eUDEGOWCZwHvmUC2yn3bBhE.l7T0QzG', 'FPOeBgv0oRk82X5faNqLBB01S5bhj79pEpXvVJPyH1EeX0x29jUGrZuJ8L38', '{\"locale\":\"en\"}', '4dyfPvYonU', '2018-09-03 07:11:23', '2018-09-05 10:07:20'),
+(1, 1, 'Admin', 'Admin', 'admin@admin.com', 'storage/users/1536071526-profile.jpg', '$2y$10$cVizW9apioAB7OeKb0OSF.eUDEGOWCZwHvmUC2yn3bBhE.l7T0QzG', 'CG0EKQC5n3BywujZxuPPUSE5TjxcQpAoXH9mWDR3qWxiz8AL4qLGTLA6eOWc', '{\"locale\":\"en\"}', '4dyfPvYonU', '2018-09-03 07:11:23', '2018-09-05 10:07:20'),
 (11, 2, 'pochep', 'beat', 'pochep@admin.com', 'storage/users/1536071454-profile.jpg', '$2y$10$cWSrWzZy6l022hS4J/SZW.tzbkxlQy7HoQs.3F7.K9GXSr2qcLgzm', 'EDI0688ZsmfvtTZWRKyhqbq0kbc3nEJfDRRk1cNBLb5G7WxviEqsubCLgYHM', NULL, '2I2so1Wr', '2018-09-04 11:21:05', '2018-09-04 11:30:54'),
-(12, 2, 'Станислав', 'Шиптя', 'stas@redbox.in.ua', 'storage/users/1536326392-profile.jpg', '$2y$10$uBjVat3zc.n6fW5YyQ5w5uf/F151lyrpvX.iNz8AENsWutIhNqF6W', 'v8PgOxs5Wy9QtzaCfzALlNiVavvvOTTtzSIg7m3eWMRbmMCZAoHpJceneh4T', NULL, 'MzxM2cfPBf', '2018-09-07 09:55:33', '2018-09-07 10:42:26');
+(12, 2, 'Станислав', 'Шиптя', 'stas@redbox.in.ua', 'storage/users/1536326392-profile.jpg', '$2y$10$uBjVat3zc.n6fW5YyQ5w5uf/F151lyrpvX.iNz8AENsWutIhNqF6W', 'EUsPGBUm1r3xA7YMBvoQmGOWPLQ4O91829XNyT89GNmUeWGPH974COUH7sND', NULL, 'xipkyeC3tg', '2018-09-07 09:55:33', '2018-09-09 07:49:10'),
+(13, 2, 'repka', 'repka', 'repka@repka.com', 'storage/users/1536496155png', '$2y$10$qqlD.v.hjgP1Qltkp8hNuOugc0LQ49xioKKyg7uovzdf2UBQAt4dW', 'PPntmHnth6bWpFATbvhZh31nazufxmafqqtSUQi2j2pck5xG0GkvyAlvv8di', NULL, 'KBApJGcupP', '2018-09-09 07:54:07', '2018-09-09 09:29:35');
 
 -- --------------------------------------------------------
 
@@ -679,7 +682,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `roles`
 --
@@ -689,12 +692,12 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT для таблицы `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблицы `socials`
 --
 ALTER TABLE `socials`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `translations`
 --
@@ -704,7 +707,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

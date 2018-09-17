@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/language/{locale}', function () {
+    return redirect()->back();
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('/search', 'PostsController@search');
 
