@@ -28,6 +28,10 @@ a {
     background-color: transparent
 }
 
+.profile-control-post-status .fas{
+    padding: 0 10px;
+}
+
 li.active,
 a.active.focus,
 a.active:focus,
@@ -105,6 +109,32 @@ button, input, optgroup, select, textarea {
     margin: 0
 }
 
+.wrapper-right-signin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.language{
+    color: #FFE6A2;
+    margin: 0 50px;
+    font-weight: bold;
+    min-width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #FFE6A2;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.language:hover{
+    color: #FFE6A2;
+    text-decoration: none;
+}
 /*.cards{*/
     /*display: none;*/
 /*}*/
@@ -1137,9 +1167,13 @@ a.disabled {
 .wrapper-profile-control-posts-buttons{
     /*min-width: 95px;*/
     min-width: 135px;
-    width: 135px;
+    /*width: 135px;*/
     display: flex;
     align-items: center;
+}
+
+.wrapper-profile-control-posts-buttons p:first-child{
+    line-height: 2;
 }
 
 .profile-control-post-status{
@@ -1160,6 +1194,13 @@ a.disabled {
 
 
 /* media */
+@media (max-width: 650px){
+    .wrapper-right-signin{
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
 @media (max-width: 768px) {
   .wrapper-header {
     padding: 30px 20px;

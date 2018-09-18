@@ -13,7 +13,7 @@
             <div class="container">
 
                 <div class="wrapper-logo-user">
-                    <p>
+                    <div>
                         <a class="navbar-brand" href="{{ url('/') }}">
                             @if(setting('site.logo'))
                                 <img src="{{ asset('storage/' . setting('site.logo')) }}" alt="">
@@ -21,71 +21,87 @@
                                 LOGO
                             @endif
                         </a>
-                    </p>
-                    <p>
+                    </div>
 
-                    <p>
-                        <a href="{{ url('/language/en') }}"
-                           class="nav-item-child nav-item-hover language  @if ( Config::get('app.locale') == 'en') active-language @endif">
-                            @lang('messages.menu.language.en')
-                        </a>
-                    </p>
+                    <div class="wrapper-right-signin">
 
-                    <p>
-                        <a href="{{ url('/language/ru') }}"
-                           class="nav-item-child nav-item-hover language @if ( Config::get('app.locale') == 'ru') active-language @endif">
-                            @lang('messages.menu.language.ru')
-                        </a>
-                    </p>
+                        @if ( Config::get('app.locale') == 'en')
+                            <p>
+                                <a href="{{ url('/language/ru') }}"
+                                   class="nav-item-child nav-item-hover language @if ( Config::get('app.locale') == 'ru') active-language @endif">
+                                    @lang('messages.menu.language.ru')
+                                </a>
+                            </p>
+                        @endif
 
-                    <ul class="navbar-nav ml-auto">
+                        @if ( Config::get('app.locale') == 'ru')
+                            <p>
+                                <a href="{{ url('/language/en') }}"
+                                   class="nav-item-child nav-item-hover language  @if ( Config::get('app.locale') == 'en') active-language @endif">
+                                    @lang('messages.menu.language.en')
+                                </a>
+                            </p>
+                        @endif
 
-                        <a href="{{ url('/language/ru') }}"
-                           class="nav-item-child nav-item-hover language @if ( Config::get('app.locale') == 'ru') active-language @endif">
-                            @lang('messages.menu.language.ru')
-                        </a>
-
-
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link signin" href="{{ route('login') }}">@lang('messages.menu.signIN')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link signin"
-                                   href="{{ route('register') }}">@lang('messages.menu.signUp')</a>
-                            </li>
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ url('profile') }}">@lang('messages.profile')</a>
-
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            @lang('messages.menu.logout')
+                        <ul class="navbar-nav ml-auto">
+                            @guest
+                                <li class="nav-item">
+                                    <a class="nav-link signin"
+                                       href="{{ route('login') }}">@lang('messages.menu.signIN')</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link signin"
+                                       href="{{ route('register') }}">@lang('messages.menu.signUp')</a>
+                                </li>
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                              style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                                @endguest
-                    </ul>
-                    </p>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item"
+                                               href="{{ url('profile') }}">@lang('messages.profile')</a>
+
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                @lang('messages.menu.logout')
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                  style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                    @endguest
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <div class="site-heading">
-                            <h1>{{ setting('site.title') }}</h1>
-                            <span class="subheading">{{ setting('site.description') }}</span>
+
+                            @if ( Config::get('app.locale') == 'ru')
+                                <h1>{{ setting('site.title') }}</h1>
+                            @endif
+
+                            @if ( Config::get('app.locale') == 'en')
+                                <h1>{{ setting('site.titleEng') }}</h1>
+                            @endif
+
+
+                            @if ( Config::get('app.locale') == 'ru')
+                                    <span class="subheading">{{ setting('site.description') }}</span>
+                            @endif
+
+                            @if ( Config::get('app.locale') == 'en')
+                                    <span class="subheading">{{ setting('site.descriptionEng') }}</span>
+                            @endif
+
 
                             <form class="search-form" action="{{ action('PostsController@search') }}">
                                 <input name="search" type="text" class="form-control"
