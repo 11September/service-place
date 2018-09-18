@@ -9,7 +9,7 @@
 <div class="register-page">
 
     <div class="wrapper-header">
-        <a class="nav-link signin" href="{{ url('/profile') }}">Back</a>
+        <a class="nav-link signin" href="{{ url('/profile') }}">@lang('messages.back')</a>
     </div>
 
     <div class="register-content">
@@ -106,7 +106,7 @@
                     </div>
 
                     <div class="form-button">
-                        <button class="nav-link signin" type="submit" value="Submit">Save</button>
+                        <button class="nav-link signin" type="submit" value="Submit">@lang('messages.save')</button>
                     </div>
 
                 </form>

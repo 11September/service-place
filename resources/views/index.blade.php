@@ -26,7 +26,7 @@
 
                     <p>
                         <a href="{{ url('/language/en') }}"
-                          class="nav-item-child nav-item-hover language  @if ( Config::get('app.locale') == 'en') active-language @endif">
+                           class="nav-item-child nav-item-hover language  @if ( Config::get('app.locale') == 'en') active-language @endif">
                             @lang('messages.menu.language.en')
                         </a>
                     </p>
@@ -46,13 +46,13 @@
                         </a>
 
 
-
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link signin" href="{{ route('login') }}">@lang('messages.menu.signIN')</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link signin" href="{{ route('register') }}">@lang('messages.menu.signUp')</a>
+                                <a class="nav-link signin"
+                                   href="{{ route('register') }}">@lang('messages.menu.signUp')</a>
                             </li>
                             @else
                                 <li class="nav-item dropdown">
@@ -62,12 +62,12 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
+                                        <a class="dropdown-item" href="{{ url('profile') }}">@lang('messages.profile')</a>
 
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            @lang('messages.menu.logout')
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -89,7 +89,7 @@
 
                             <form class="search-form" action="{{ action('PostsController@search') }}">
                                 <input name="search" type="text" class="form-control"
-                                       placeholder="What do you want to find?">
+                                       placeholder="@lang('messages.search-placeholder')">
                             </form>
                         </div>
                     </div>
@@ -102,11 +102,11 @@
         <div class="container">
             <div class="row">
                 @if(Request::is('search'))
-                    <p class="search-helper">We found {{ $posts->total() }} posts<span
-                                class="search-helper-keyword"> "{{ $search }}" </span>
+                    <p class="search-helper">@lang('messages.we-found') {{ $posts->total() }} @lang('messages.we-found-posts')
+                        <span class="search-helper-keyword"> "{{ $search }}" </span>
                     </p>
                 @else
-                    <p class="search-helper">We found {{ $posts->total() }} latests posts</p>
+                    <p class="search-helper">@lang('messages.we-found') {{ $posts->total() }} @lang('messages.we-found-latest-posts')</p>
                 @endif
             </div>
         </div>

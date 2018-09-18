@@ -9,7 +9,7 @@
     <div class="register-page">
 
         <div class="wrapper-header">
-            <a class="nav-link signin" href="{{ URL::previous() }}">Back</a>
+            <a class="nav-link signin" href="{{ URL::previous() }}">@lang('messages.back')</a>
         </div>
 
         <div class="container">
@@ -44,7 +44,7 @@
                             </p>
                         </div>
                         <div class="one-post-contact-me">
-                            <p>Contact me:</p>
+                            <p>@lang('messages.contact_me'):</p>
 
                             @if(isset($post->user->social->instagram) && !empty($post->user->social->instagram))
                                 <p class="one-post-contact-item"><a href="{{ $post->user->social->instagram }}">instagram</a>

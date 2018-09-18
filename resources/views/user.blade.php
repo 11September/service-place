@@ -9,7 +9,7 @@
     <div class="register-page">
 
         <div class="wrapper-header">
-            <a class="nav-link signin" href="{{ url('/') }}">Home</a>
+            <a class="nav-link signin" href="{{ url('/') }}">@lang('messages.home')</a>
         </div>
 
         <div class="profile-content">
@@ -26,7 +26,7 @@
             <div class="wrapper-social-links">
                 <div class="social-links">
                     <div class="social-link social-link-thead @if(empty($user->social->instagram) && empty($user->social->facebook) && empty($user->social->vk) && empty($user->social->linkedIn) && empty($user->social->telegram) && empty($user->social->viber) && empty($user->social->whatsApp)) empty @endif">
-                        <p class="social-link-thead-name">Social links</p>
+                        <p class="social-link-thead-name">@lang('messages.social_links')</p>
                     </div>
 
                     @if(isset($user->social->instagram) && !empty($user->social->instagram))
@@ -84,7 +84,7 @@
 
             <div class="social-links">
                 <div class="social-link social-link-thead">
-                    <p class="social-link-thead-name">Posts</p>
+                    <p class="social-link-thead-name">@lang('messages.posts')</p>
                 </div>
 
                 @foreach($user->posts as $post)

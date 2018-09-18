@@ -9,8 +9,8 @@
     <div class="register-page">
 
         <div class="wrapper-header">
-            <a class="nav-link signin" href="{{ url('/') }}">Home</a>
-            <a class="nav-link signin" href="{{ url('/editProfile') }}">Edit</a>
+            <a class="nav-link signin" href="{{ url('/') }}">@lang('messages.home')</a>
+            <a class="nav-link signin" href="{{ url('/editProfile') }}">@lang('messages.editProfile')</a>
         </div>
 
         <div class="profile-content">
@@ -29,8 +29,8 @@
 
 
                     <div class="social-link social-link-thead @if(empty($user->social->instagram) && empty($user->social->facebook) && empty($user->social->vk) && empty($user->social->linkedIn) && empty($user->social->telegram) && empty($user->social->viber) && empty($user->social->whatsApp)) empty @endif">
-                        <p class="social-link-thead-name">Social links</p>
-                        <p><a class="social-link-create-button" href="{{ url('/social') }}">+Add</a></p>
+                        <p class="social-link-thead-name">@lang('messages.social_links')</p>
+                        <p><a class="social-link-create-button" href="{{ url('/social') }}">@lang('messages.add')</a></p>
                     </div>
 
                     @if(isset($user->social->instagram) && !empty($user->social->instagram))
@@ -40,9 +40,9 @@
                                         href="{{ $user->social->instagram }}">{{ $user->social->instagram }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "instagram") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "instagram") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -54,9 +54,9 @@
                                         href="{{ $user->social->facebook }}">{{ $user->social->facebook }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "facebook") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "facebook") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -67,9 +67,9 @@
                             <p class="social-link-src"><a href="{{ $user->social->vk }}">{{ $user->social->vk }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "vk") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "vk") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -81,9 +81,9 @@
                                         href="{{ $user->social->linkedIn }}">{{ $user->social->linkedIn }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "linkedIn") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "linkedIn") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -95,9 +95,9 @@
                                         href="{{ $user->social->telegram }}">{{ $user->social->telegram }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "telegram") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "telegram") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -109,9 +109,9 @@
                                         href="{{ $user->social->viber }}">{{ $user->social->viber }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "viber") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "viber") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -123,9 +123,9 @@
                                         href="{{ $user->social->whatsApp }}">{{ $user->social->whatsApp }}</a></p>
 
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/social') }}">Edit</a>
+                                <a class="social-link-edit-button" href="{{ url('/social') }}">@lang('messages.edit')</a>
                                 <a class="social-link-delete-button"
-                                   href="{{ action('WelcomeController@social_delete', "whatsApp") }}">Delete</a>
+                                   href="{{ action('WelcomeController@social_delete', "whatsApp") }}">@lang('messages.delete')</a>
                             </p>
                         </div>
                     @endif
@@ -134,9 +134,9 @@
             </div>
 
             <div class="social-links">
-                <div class="social-link social-link-thead @if(count($user->posts) <= 1) empty @endif">
-                    <p class="social-link-thead-name">Posts</p>
-                    <p><a class="social-link-create-button" href="{{ url('/new-post') }}">+Add</a></p>
+                <div class="social-link social-link-thead @if(count($user->posts) < 1) empty @endif">
+                    <p class="social-link-thead-name">@lang('messages.posts')</p>
+                    <p><a class="social-link-create-button" href="{{ url('/new-post') }}">@lang('messages.add')</a></p>
                 </div>
 
                 @foreach($user->posts as $post)
@@ -154,8 +154,8 @@
 
                         <div class="wrapper-profile-control-posts-buttons">
                             <p>
-                                <a class="social-link-edit-button" href="{{ url('/edit-post/' . $post->id) }}">Edit</a>
-                                <a class="social-link-delete-button" href="{{ url('/delete-post/' . $post->id) }}">Delete</a>
+                                <a class="social-link-edit-button" href="{{ url('/edit-post/' . $post->id) }}">@lang('messages.edit')</a>
+                                <a class="social-link-delete-button" href="{{ url('/delete-post/' . $post->id) }}">@lang('messages.delete')</a>
                             </p>
 
                             @if($post->status == "Published")

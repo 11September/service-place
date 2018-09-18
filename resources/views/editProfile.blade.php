@@ -4,12 +4,12 @@
     <div class="register-page">
 
         <div class="wrapper-header">
-            <a class="nav-link signin" href="{{ url('/profile') }}">Back</a>
+            <a class="nav-link signin" href="{{ url('/profile') }}">@lang('messages.home')</a>
         </div>
 
         <div class="register-content">
             <div class="container">
-                <h2 class="register-heading text-center">Edit Profile</h2>
+                <h2 class="register-heading text-center">@lang('messages.editProfile')</h2>
 
                 <div class="register-form-wrapper">
                     <form method="post" action="{{ action('WelcomeController@updateProfile', $user) }}" enctype="multipart/form-data">
@@ -17,12 +17,12 @@
 
                         <div class="form-row">
                             <div class="form-item">
-                                <p>Profile photo</p>
+                                <p>@lang('messages.Profile_photo')</p>
                                 <input type="file" name="avatar" id="file" class="upload" />
-                                <label for="file">Choose a file</label>
+                                <label for="file">@lang('messages.Choose_file')</label>
                             </div>
                             <div class="form-item">
-                                <p>Email</p>
+                                <p>@lang('messages.email')</p>
 
                                 <input disabled="disabled" value="{{ $user->email }}" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
@@ -36,7 +36,7 @@
 
                         <div class="form-row">
                             <div class="form-item">
-                                <p>First name</p>
+                                <p>@lang('messages.fName')</p>
 
                                 <input value="{{ $user->name }}" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
@@ -47,7 +47,7 @@
                                 @endif
                             </div>
                             <div class="form-item">
-                                <p>Last name</p>
+                                <p>@lang('messages.lName')</p>
 
                                 <input value="{{ $user->lastName }}" id="lastName" type="text" class="form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required autofocus>
 
@@ -61,7 +61,7 @@
 
                         <div class="form-row">
                             <div class="form-item">
-                                <p>Password</p>
+                                <p>@lang('messages.password')</p>
 
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
 
@@ -72,14 +72,14 @@
                                 @endif
                             </div>
                             <div class="form-item">
-                                <p>Confirm password</p>
+                                <p>@lang('messages.Cpassword')</p>
 
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                             </div>
                         </div>
 
                         <div class="form-button">
-                            <button class="nav-link signin" type="submit" value="Submit">{{ __('Edit') }}</button>
+                            <button class="nav-link signin" type="submit" value="Submit">@lang('messages.edit')</button>
                         </div>
 
                     </form>
