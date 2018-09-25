@@ -1183,6 +1183,10 @@ a.disabled {
     margin: 5px 0;
 }
 
+.social-link{
+    padding: 35px;
+}
+
 .social-links-padding{
     /*padding-bottom: 20px;*/
 }

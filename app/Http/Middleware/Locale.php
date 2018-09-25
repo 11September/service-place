@@ -14,13 +14,14 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
+        $config = App::getLocale();
+
         if ($request->route('locale')){
             App::setLocale($request->route('locale') ?? "en");
 
             session(['locale' => $request->route('locale') ?? "en"]);
         }else{
-            App::setLocale(session('locale',
-                'en'));
+            App::setLocale(session('locale', $config));
         }
 
         return $next($request);
