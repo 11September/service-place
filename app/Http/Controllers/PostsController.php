@@ -46,7 +46,7 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
         ]);
 
         $post->title = $request->title;
@@ -68,7 +68,7 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
         ]);
 
         $post = new Post();

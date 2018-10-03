@@ -21,14 +21,14 @@ class WelcomeController extends Controller
     {
         $user = User::whereId($id)->with(['posts' => function ($query) {
             $query->where('status', '=', 'Published');
-        }], 'social')->first();
+        }], 'social')->firstOrFail();
 
         return view('user', compact('user'));
     }
 
     public function profile()
     {
-        $user = User::where('id', Auth::id())->with('posts', 'social')->first();
+        $user = User::where('id', Auth::id())->with('posts', 'social')->firstOrFail();
 
         return view('profile', compact('user'));
     }

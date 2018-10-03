@@ -24,7 +24,7 @@ class Post extends Model
         $plusMonth = $now->addMonth();
         $now = Carbon::now();
 
-        return $query = $query->whereBetween('date_from', [$now, $plusMonth])
+        return $query = $query->whereDate('date_from', '>=', $now->toDateString())
             ->whereDate('date_start', '<=', $now->toDateString());
     }
 }
